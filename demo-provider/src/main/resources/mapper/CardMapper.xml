@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.rejoicy.dubbodemo.demoprovider.dao.CardDao">
+
+    <resultMap id="cardResult" type="cn.rejoicy.dubbodemo.demoprovider.entity.Card">
+        <id column="id" property="id" />
+        <result column="balance" property="balance" />
+        <result column="card_number" property="cardNumber" />
+        <result column="create_time" property="createTime" />
+        <result column="version" property="version" />
+    </resultMap>
+
+    <select id="findByCardNumber" resultMap="cardResult">
+        SELECT * from card where card_number = #{cardNumber}
+    </select>
+</mapper>
